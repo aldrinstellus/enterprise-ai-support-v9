@@ -6,7 +6,12 @@ interface Message {
   id: string;
   type: 'user' | 'ai' | 'widget';
   content?: string;
+  widgetType?: string;
+  widgetData?: any;
   timestamp: Date;
+  feedback?: 'like' | 'dislike';
+  userQuery?: string; // Store the original query for regeneration
+  isTyping?: boolean; // Track if this message is currently being typed
 }
 
 interface ConversationContextType {

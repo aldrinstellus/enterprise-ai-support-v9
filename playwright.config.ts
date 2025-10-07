@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Playwright E2E Testing Configuration for Enterprise AI Support V4
+ * Playwright E2E Testing Configuration for Enterprise AI Support V9
  * Tests multi-persona query detection, widget rendering, and conversation flows
  */
 export default defineConfig({
@@ -29,8 +29,8 @@ export default defineConfig({
 
   // Global test configuration
   use: {
-    // Base URL for V4 application
-    baseURL: 'http://localhost:3004',
+    // Base URL for V9 application
+    baseURL: 'http://localhost:3009',
 
     // Capture screenshots on failure
     screenshot: 'only-on-failure',

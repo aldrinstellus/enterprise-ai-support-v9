@@ -22,7 +22,7 @@ export default function Concept2Layout({ children }: { children: React.ReactNode
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'b') {
         e.preventDefault();
-        setSidebarOpen((prev) => !prev);
+        setSidebarOpen((prev: boolean) => !prev);
       }
     };
 

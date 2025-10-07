@@ -50,6 +50,8 @@ const widgetDataMap: Record<WidgetType, WidgetData> = {
   'knowledge-article': knowledgeArticleDemo,
   'analytics-dashboard': executiveSummaryDemo, // Fallback
   'escalation-path': ticketListDemo, // Fallback
+  'performance-trends': executiveSummaryDemo, // Fallback
+  'sentiment-analysis': executiveSummaryDemo, // Fallback
 };
 
 export function DashboardGrid({ widgets, onWidgetClick }: DashboardGridProps) {

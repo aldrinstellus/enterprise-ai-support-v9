@@ -48,7 +48,14 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
   const inputRef = useRef<HTMLInputElement>(null);
   const { quickActionQuery } = useQuickAction();
   const { sidebarOpen, toggleSidebar } = useSidebar();
-  const searchParams = useSearchParams();
+
+  // Safely handle useSearchParams for SSR
+  let searchParams = null;
+  try {
+    searchParams = useSearchParams();
+  } catch (e) {
+    // SSR - no search params available
+  }
 
   // Get current persona ID (memoized to ensure it updates when persona changes)
   const personaId = useMemo(() => (persona?.id || 'c-level') as PersonaId, [persona?.id]);
@@ -156,6 +163,7 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
 
   // Handle URL query parameter (from dashboard widget clicks)
   useEffect(() => {
+    if (!searchParams) return;
     const query = searchParams.get('query');
     if (query) {
       setInputValue(query);
@@ -457,12 +465,12 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
                   </div>
                 )}
 
-                {message.type === 'widget' && (
+                {message.type === 'widget' && message.widgetType && (
                   <div className="flex gap-3">
                     <div className="w-8 h-8 flex-shrink-0" />
                     <div className="max-w-4xl w-full">
                       <WidgetRenderer
-                        type={message.widgetType!}
+                        type={message.widgetType as import('@/types/widget').WidgetType}
                         data={message.widgetData}
                         onAction={(action) => processQuery(action)}
                       />

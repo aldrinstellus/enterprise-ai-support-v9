@@ -14,6 +14,7 @@ export type WidgetType =
   | 'agent-dashboard'
   | 'ticket-detail'
   | 'meeting-scheduler'
+  | 'meeting-confirmation'
   | 'message-composer'
   | 'call-prep-notes'
   | 'response-composer'
@@ -21,7 +22,8 @@ export type WidgetType =
   | 'agent-performance-stats'
   | 'knowledge-base-search'
   | 'customer-risk-list'
-  | 'knowledge-article';
+  | 'knowledge-article'
+  | 'escalation-path';
 
 // ============================================================================
 // WIDGET DATA INTERFACES (Based on Bhanu's Demo Data)
@@ -706,6 +708,45 @@ export interface MessageComposerData {
   };
 }
 
+// Meeting Confirmation Widget (All personas)
+export interface MeetingConfirmationData {
+  title: string;
+  meetingDetails: {
+    date: string;
+    time: string;
+    duration: string;
+    timezone: string;
+    type: string;
+  };
+  attendees: Array<{
+    name: string;
+    email: string;
+    status: 'confirmed' | 'pending' | 'declined';
+  }>;
+  agenda: string[];
+  location?: {
+    type: 'virtual' | 'in-person';
+    details: string;
+  };
+  confirmed: boolean;
+}
+
+// Escalation Path Widget (All personas)
+export interface EscalationPathData {
+  ticketId: string;
+  currentLevel: number;
+  maxLevel: number;
+  escalationHistory: Array<{
+    level: number;
+    timestamp: string;
+    from: string;
+    to: string;
+    reason: string;
+  }>;
+  nextSteps: string[];
+  recommendedAction: string;
+}
+
 // Union type for all widget data
 export type WidgetData =
   | ExecutiveSummaryData
@@ -721,10 +762,12 @@ export type WidgetData =
   | AgentPerformanceComparisonData
   | CustomerRiskListData
   | MeetingSchedulerData
+  | MeetingConfirmationData
   | CallPrepNotesData
   | ResponseComposerData
   | SimilarTicketsAnalysisData
   | AgentPerformanceStatsData
   | KnowledgeBaseSearchData
   | KnowledgeArticleData
-  | MessageComposerData;
+  | MessageComposerData
+  | EscalationPathData;

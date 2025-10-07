@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/playwright.config.ts",
-    "rootDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/tests/e2e",
+    "configFile": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/playwright.config.ts",
+    "rootDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -40,7 +40,7 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/test-results",
+        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -48,7 +48,7 @@
         },
         "id": "chromium-c-level",
         "name": "chromium-c-level",
-        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/tests/e2e",
+        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/personas/c-level.spec.ts"
@@ -56,7 +56,7 @@
         "timeout": 90000
       },
       {
-        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/test-results",
+        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -64,7 +64,7 @@
         },
         "id": "chromium-cs-manager",
         "name": "chromium-cs-manager",
-        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/tests/e2e",
+        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/personas/cs-manager.spec.ts"
@@ -72,7 +72,7 @@
         "timeout": 90000
       },
       {
-        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/test-results",
+        "outputDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -80,7 +80,7 @@
         },
         "id": "chromium-support-agent",
         "name": "chromium-support-agent",
-        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v4/tests/e2e",
+        "testDir": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/personas/support-agent.spec.ts"
@@ -111,7 +111,7 @@
           "specs": [
             {
               "title": "Q1: Executive Summary Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -124,25 +124,53 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4995,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me executive summary\"\n"
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Executive Summary Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:53.025Z",
+                      "startTime": "2025-10-07T11:13:05.727Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-53034-Q1-Executive-Summary-Widget-chromium-c-level/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-53034-Q1-Executive-Summary-Widget-chromium-c-level/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "cb52835bff352e0d8495-6bf0ea7c8645a4d38be2",
@@ -163,27 +191,20 @@
                   "projectName": "chromium-c-level",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5946,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Tell me more about Acme Corp\"\n"
-                        },
-                        {
-                          "text": "✅ Customer Risk Profile Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:01.645Z",
+                      "startTime": "2025-10-07T11:13:18.349Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "cb52835bff352e0d8495-3b60c83cdf2690773d4b",
@@ -193,7 +214,7 @@
             },
             {
               "title": "Q3: SLA Performance Chart Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -206,25 +227,53 @@
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4968,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me the SLA performance breakdown\"\n"
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ SLA Performance Chart Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:53.025Z",
+                      "startTime": "2025-10-07T11:13:05.720Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-64260-LA-Performance-Chart-Widget-chromium-c-level/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-64260-LA-Performance-Chart-Widget-chromium-c-level/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "cb52835bff352e0d8495-78fbdc9dafd157459b38",
@@ -245,27 +294,20 @@
                   "projectName": "chromium-c-level",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5940,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me high-risk customers\"\n"
-                        },
-                        {
-                          "text": "✅ Customer Risk List Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:01.445Z",
+                      "startTime": "2025-10-07T11:13:18.363Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "cb52835bff352e0d8495-bd1ffbf484659d35ed74",
@@ -275,7 +317,7 @@
             },
             {
               "title": "Q5: Ticket Detail Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -288,25 +330,53 @@
                     {
                       "workerIndex": 2,
                       "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 5992,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me ticket TICK-001\"\n"
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Ticket Detail Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:53.025Z",
+                      "startTime": "2025-10-07T11:13:05.720Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-bd858-sts-Q5-Ticket-Detail-Widget-chromium-c-level/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-bd858-sts-Q5-Ticket-Detail-Widget-chromium-c-level/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "cb52835bff352e0d8495-27644f72faa1c271ae70",
@@ -327,54 +397,20 @@
                   "projectName": "chromium-c-level",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 20931,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Multi-Step Conversation: Schedule Executive Call\n"
-                        },
-                        {
-                          "text": "\n📝 Step 1: \"Schedule executive call\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 1\n"
-                        },
-                        {
-                          "text": "✅ Response contains expected text\n"
-                        },
-                        {
-                          "text": "\n📝 Step 2: \"yes\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 2\n"
-                        },
-                        {
-                          "text": "✅ Widget \"meeting-scheduler\" rendered\n"
-                        },
-                        {
-                          "text": "\n📝 Step 3: \"book tomorrow at 1pm\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 3\n"
-                        },
-                        {
-                          "text": "✅ Widget \"meeting-confirmation\" rendered\n"
-                        },
-                        {
-                          "text": "✅ Multi-Step Conversation Flow completed successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:02.646Z",
+                      "startTime": "2025-10-07T11:13:18.349Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "cb52835bff352e0d8495-668abb931dcdf298c1ac",
@@ -384,7 +420,7 @@
             },
             {
               "title": "Validate No Console Errors",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -397,22 +433,53 @@
                     {
                       "workerIndex": 3,
                       "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 3,
-                      "errors": [],
-                      "stdout": [
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ No console errors detected\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/c-level.spec.ts:30:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:53.024Z",
+                      "startTime": "2025-10-07T11:13:05.719Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-aedf5--Validate-No-Console-Errors-chromium-c-level/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-c-level-C-Level-E-aedf5--Validate-No-Console-Errors-chromium-c-level/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "cb52835bff352e0d8495-c11aae1b3c5d3bc7fa70",
@@ -439,7 +506,7 @@
           "specs": [
             {
               "title": "Q1: Team Workload Dashboard Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -452,25 +519,53 @@
                     {
                       "workerIndex": 4,
                       "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4966,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me my team's status\"\n"
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Team Workload Dashboard Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:53.024Z",
+                      "startTime": "2025-10-07T11:13:05.718Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-605ac-m-Workload-Dashboard-Widget-chromium-cs-manager/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-605ac-m-Workload-Dashboard-Widget-chromium-cs-manager/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "5c33390326065a88853d-d3d028eb9fd79bc8c485",
@@ -491,27 +586,20 @@
                   "projectName": "chromium-cs-manager",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4971,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me Sarah's tickets\"\n"
-                        },
-                        {
-                          "text": "✅ Ticket List Widget with personalized title rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:01.226Z",
+                      "startTime": "2025-10-07T11:13:18.385Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "5c33390326065a88853d-ee809a5000d96f315214",
@@ -521,7 +609,7 @@
             },
             {
               "title": "Q3: Multi-Step - Schedule 1-on-1 with Marcus (3 steps)",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -534,52 +622,53 @@
                     {
                       "workerIndex": 5,
                       "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 16711,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Multi-Step: Schedule 1-on-1 with Marcus\n"
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "\n📝 Step 1: \"Schedule a 1-on-1 coaching session with Marcus\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 1\n"
-                        },
-                        {
-                          "text": "✅ Response contains expected text\n"
-                        },
-                        {
-                          "text": "\n📝 Step 2: \"yes\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 2\n"
-                        },
-                        {
-                          "text": "✅ Widget \"meeting-scheduler\" rendered\n"
-                        },
-                        {
-                          "text": "\n📝 Step 3: \"book tomorrow at 1pm\"\n"
-                        },
-                        {
-                          "text": "✅ AI responded to step 3\n"
-                        },
-                        {
-                          "text": "✅ Widget \"meeting-confirmation\" rendered\n"
-                        },
-                        {
-                          "text": "✅ Multi-Step 1-on-1 Scheduling completed successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:17:57.144Z",
+                      "startTime": "2025-10-07T11:13:18.747Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-b4b1a-1-on-1-with-Marcus-3-steps--chromium-cs-manager/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-b4b1a-1-on-1-with-Marcus-3-steps--chromium-cs-manager/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "5c33390326065a88853d-409de30ec475a9a9f4b6",
@@ -600,27 +689,20 @@
                   "projectName": "chromium-cs-manager",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 4947,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Draft a message to Acme Corp about the outage\"\n"
-                        },
-                        {
-                          "text": "✅ Message Composer Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:16.446Z",
+                      "startTime": "2025-10-07T11:13:30.417Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "5c33390326065a88853d-59d19d22115e48e2a9a4",
@@ -630,7 +712,7 @@
             },
             {
               "title": "Q5: Interactive Button - Send Message",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -641,27 +723,55 @@
                   "projectName": "chromium-cs-manager",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 8855,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Send Message\n"
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Send Message button action validated\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:06.289Z",
+                      "startTime": "2025-10-07T11:13:18.746Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-911c5-ctive-Button---Send-Message-chromium-cs-manager/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-911c5-ctive-Button---Send-Message-chromium-cs-manager/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "5c33390326065a88853d-09cf7167f15cbda9bed2",
@@ -682,27 +792,20 @@
                   "projectName": "chromium-cs-manager",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4027,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Save as Draft\n"
-                        },
-                        {
-                          "text": "✅ Save as Draft button action validated\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:17.699Z",
+                      "startTime": "2025-10-07T11:13:30.464Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "5c33390326065a88853d-b20d267d65c0f3caa489",
@@ -712,7 +815,7 @@
             },
             {
               "title": "Q7: Interactive Button - Save as Template",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -724,26 +827,54 @@
                   "results": [
                     {
                       "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 9917,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Save as Template\n"
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Save as Template button action validated\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/cs-manager.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:07.862Z",
+                      "startTime": "2025-10-07T11:13:18.745Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-c6ad4-e-Button---Save-as-Template-chromium-cs-manager/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-cs-manager-CS-Man-c6ad4-e-Button---Save-as-Template-chromium-cs-manager/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "5c33390326065a88853d-db42cd331485cf8b1640",
@@ -764,24 +895,20 @@
                   "projectName": "chromium-cs-manager",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✅ No console errors detected\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:20.355Z",
+                      "startTime": "2025-10-07T11:13:30.449Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "5c33390326065a88853d-1b9194271882bed5d17b",
@@ -808,7 +935,7 @@
           "specs": [
             {
               "title": "Q1: Agent Dashboard Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -819,27 +946,55 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5969,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Good morning, what's on my plate today?\"\n"
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Agent Dashboard Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:08.019Z",
+                      "startTime": "2025-10-07T11:13:18.754Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-49e92-s-Q1-Agent-Dashboard-Widget-chromium-support-agent/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-49e92-s-Q1-Agent-Dashboard-Widget-chromium-support-agent/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-d5da3beb088e293ca541",
@@ -860,27 +1015,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4938,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me ticket TICK-001\"\n"
-                        },
-                        {
-                          "text": "✅ Ticket Detail Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:16.664Z",
+                      "startTime": "2025-10-07T11:13:30.496Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-4ec7d3eca28ced29c0c6",
@@ -901,27 +1049,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4959,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Help me prepare for the call with Acme Corp\"\n"
-                        },
-                        {
-                          "text": "✅ Call Prep Notes Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:21.609Z",
+                      "startTime": "2025-10-07T11:13:30.496Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-84d414956c18c3362d2b",
@@ -931,7 +1072,7 @@
             },
             {
               "title": "Q4: Response Composer Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -942,27 +1083,55 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5974,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Draft a response for this angry customer\"\n"
+                      "workerIndex": 9,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Response Composer Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:20.787Z",
+                      "startTime": "2025-10-07T11:13:18.750Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-2bd94-Q4-Response-Composer-Widget-chromium-support-agent/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-2bd94-Q4-Response-Composer-Widget-chromium-support-agent/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-0ae728bd4e74f956a488",
@@ -983,27 +1152,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4923,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Send Response\n"
-                        },
-                        {
-                          "text": "✅ Send Response button action validated\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:29.417Z",
+                      "startTime": "2025-10-07T11:13:30.348Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-63fd128e25d4534eb596",
@@ -1024,27 +1186,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3984,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Edit and Customize\n"
-                        },
-                        {
-                          "text": "✅ Edit and Customize button action validated\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:34.347Z",
+                      "startTime": "2025-10-07T11:13:30.348Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-07dbcb97e259880e4203",
@@ -1054,7 +1209,7 @@
             },
             {
               "title": "Q7: Interactive Button - Regenerate Response",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1065,27 +1220,55 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 10888,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing Interactive Button: Regenerate Response\n"
+                      "workerIndex": 10,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Regenerate Response button action validated\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:21.830Z",
+                      "startTime": "2025-10-07T11:13:30.691Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-c0ed1-utton---Regenerate-Response-chromium-support-agent/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-c0ed1-utton---Regenerate-Response-chromium-support-agent/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-2564877d7c1a9b9e2d4f",
@@ -1106,27 +1289,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 4958,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me my tickets\"\n"
-                        },
-                        {
-                          "text": "✅ Ticket List Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:35.332Z",
+                      "startTime": "2025-10-07T11:13:41.817Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-c8cf381e6920673743fe",
@@ -1147,27 +1323,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 5981,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Find similar tickets I've resolved\"\n"
-                        },
-                        {
-                          "text": "✅ Similar Tickets Analysis Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:40.296Z",
+                      "startTime": "2025-10-07T11:13:41.817Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-69420419687d12d25215",
@@ -1177,7 +1346,7 @@
             },
             {
               "title": "Q10: Agent Performance Stats Widget",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1188,27 +1357,55 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4967,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Show me my performance stats\"\n"
+                      "workerIndex": 11,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
                         },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ Agent Performance Stats Widget rendered successfully\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:22.202Z",
+                      "startTime": "2025-10-07T11:13:30.749Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-08f4f-nt-Performance-Stats-Widget-chromium-support-agent/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-08f4f-nt-Performance-Stats-Widget-chromium-support-agent/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-dafe76c54eb41619345a",
@@ -1229,27 +1426,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 5954,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"How do I troubleshoot authentication issues?\"\n"
-                        },
-                        {
-                          "text": "✅ Knowledge Base Search Widget rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:29.813Z",
+                      "startTime": "2025-10-07T11:13:41.848Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-c45b368cdcf2fd07810f",
@@ -1270,27 +1460,20 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4987,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🎯 Testing: \"Open KB-107\" (dynamic ID extraction)\n"
-                        },
-                        {
-                          "text": "✅ Knowledge Article Widget with dynamic ID rendered successfully\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:35.773Z",
+                      "startTime": "2025-10-07T11:13:41.848Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-f09e90039eb9cac466ef",
@@ -1300,7 +1483,7 @@
             },
             {
               "title": "Validate No Console Errors",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1311,24 +1494,55 @@
                   "projectName": "chromium-support-agent",
                   "results": [
                     {
-                      "workerIndex": 11,
+                      "workerIndex": 12,
                       "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 2,
-                      "errors": [],
-                      "stdout": [
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5",
+                        "location": {
+                          "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                          "column": 14,
+                          "line": 42
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**"
+                      },
+                      "errors": [
                         {
-                          "text": "✅ No console errors detected\n"
+                          "location": {
+                            "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                            "column": 14,
+                            "line": 42
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"chat-input\"]') to be visible\u001b[22m\n\n\n   at helpers/persona-helper.ts:42\n\n  40 |\n  41 |   // Wait for chat interface to be ready\n> 42 |   await page.waitForSelector('[data-testid=\"chat-input\"]', { timeout: 10000 });\n     |              ^\n  43 | }\n  44 |\n  45 | /**\n    at navigateToPersona (/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts:42:14)\n    at /Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/personas/support-agent.spec.ts:31:5"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-04T03:18:24.029Z",
+                      "startTime": "2025-10-07T11:13:30.772Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-edf5a--Validate-No-Console-Errors-chromium-support-agent/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/test-results/personas-support-agent-Sup-edf5a--Validate-No-Console-Errors-chromium-support-agent/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/admin/Documents/claudecode/Projects/enterprise-ai-support-v9/tests/e2e/helpers/persona-helper.ts",
+                        "column": 14,
+                        "line": 42
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "0d9c7784d1ef474ed69d-e5135e75c4a3e9a5d201",
@@ -1343,11 +1557,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-04T03:17:52.600Z",
-    "duration": 53796.48,
-    "expected": 28,
-    "skipped": 0,
-    "unexpected": 0,
+    "startTime": "2025-10-07T11:13:05.273Z",
+    "duration": 36596.755,
+    "expected": 0,
+    "skipped": 15,
+    "unexpected": 13,
     "flaky": 0
   }
 }

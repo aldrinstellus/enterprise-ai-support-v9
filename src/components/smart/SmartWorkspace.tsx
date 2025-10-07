@@ -50,6 +50,8 @@ const widgetDataMap: Record<WidgetType, WidgetData> = {
   'knowledge-article': knowledgeArticleDemo,
   'analytics-dashboard': executiveSummaryDemo,
   'escalation-path': ticketListDemo,
+  'performance-trends': executiveSummaryDemo, // Fallback
+  'sentiment-analysis': executiveSummaryDemo, // Fallback
 };
 
 export function SmartWorkspace() {
